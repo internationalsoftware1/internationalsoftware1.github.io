@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
     <!-- Firebase App (core SDK) -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
@@ -48,10 +49,16 @@
         </ul>
     </section>
     <section class="contact">
-        <h2>İletişim</h2>
-        <p>Email: abdurrahimkurt249@gmail.com</p>
-    </section>
-    <footer>
+        <section id="auth">
+  <h2>Kullanıcı Girişi</h2>
+  <input type="email" id="email" placeholder="Email"><br>
+  <input type="password" id="password" placeholder="Şifre"><br>
+  <button onclick="login(document.getElementById('email').value, document.getElementById('password').value).then(()=>alert('Giriş Başarılı')).catch(e=>alert(e.message))">Giriş Yap</button>
+  <button onclick="register(document.getElementById('email').value, document.getElementById('password').value).then(()=>alert('Kayıt Başarılı')).catch(e=>alert(e.message))">Kayıt Ol</button>
+  <button onclick="logout().then(()=>alert('Çıkış yapıldı'))">Çıkış Yap</button>
+</section>
+
+        <footer>
         <p>© 2025 INTERNATIONAL SOFTWARE</p>
     </footer>
 </body>
