@@ -2,6 +2,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Firebase App (core SDK) -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDYBSYIZe1f_B4pejMXou6k14RnIB3ZfV0",
+    authDomain: "internationalsoftware-aaad6.firebaseapp.com",
+    projectId: "internationalsoftware-aaad6",
+    storageBucket: "internationalsoftware-aaad6.firebasestorage.app",
+    messagingSenderId: "481532274299",
+    appId: "1:481532274299:web:22bf73fc3c19ccb65164de",
+    measurementId: "G-740109WBFF"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  
+  // Giriş işlemleri burada olacak
+  window.register = (email, password) => createUserWithEmailAndPassword(auth, email, password);
+  window.login = (email, password) => signInWithEmailAndPassword(auth, email, password);
+  window.logout = () => signOut(auth);
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INTERNATIONAL SOFTWARE</title>
