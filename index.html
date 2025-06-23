@@ -1,7 +1,5 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
   <!DOCTYPE html>
 <html lang="tr">
 
@@ -88,83 +86,5 @@
 
 </html>
 
-    <!-- Firebase App (core SDK) -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyDYBSYIZe1f_B4pejMXou6k14RnIB3ZfV0",
-    authDomain: "internationalsoftware-aaad6.firebaseapp.com",
-    projectId: "internationalsoftware-aaad6",
-    storageBucket: "internationalsoftware-aaad6.firebasestorage.app",
-    messagingSenderId: "481532274299",
-    appId: "1:481532274299:web:22bf73fc3c19ccb65164de",
-    measurementId: "G-740109WBFF"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  
-  // Giriş işlemleri burada olacak
-  window.register = (email, password) => createUserWithEmailAndPassword(auth, email, password);
-  window.login = (email, password) => signInWithEmailAndPassword(auth, email, password);
-  window.logout = () => signOut(auth);
-</script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INTERNATIONAL SOFTWARE</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>
-
-    <img src="logo.png.png" alt="Logo" style="height: 80px;">
-  <h1>INTERNATIONAL SOFTWARE</h1>
-</header>
-
-    <section class="services">
-        <h2>Hizmetlerimiz</h2>
-        <ul>
-            <li>Web Tasarım</li>
-            <li>Uygulama Geliştirme</li>
-            <li>Mobil Oyun</li>
-            <li>Masaüstü Oyun</li>
-        </ul>
-    </section>
-    <section class="contact">
-        <section id="auth">
-  <h2>Kullanıcı Girişi</h2>
-  <input type="email" id="email" placeholder="Email"><br>
-  <input type="password" id="password" placeholder="Şifre"><br>
-  <button onclick="login(document.getElementById('email').value, document.getElementById('password').value).then(()=>alert('Giriş Başarılı')).catch(e=>alert(e.message))">Giriş Yap</button>
-  <button onclick="register(document.getElementById('email').value, document.getElementById('password').value).then(()=>alert('Kayıt Başarılı')).catch(e=>alert(e.message))">Kayıt Ol</button>
-  <button onclick="logout().then(()=>alert('Çıkış yapıldı'))">Çıkış Yap</button>
-</section>
-
-        <footer>
-        <p>© 2025 INTERNATIONAL SOFTWARE</p>
-    </footer>
-</body>
-</html>
-<button id="theme-toggle" style="position: fixed; top: 10px; right: 10px;">🌗</button>
-<script>
-  const toggle = document.getElementById("theme-toggle");
-  toggle.onclick = () => {
-    document.body.classList.toggle("dark-theme");
-    localStorage.setItem("theme", document.body.classList.contains("dark-theme") ? "dark" : "light");
-  };
-
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-theme");
-  }
-</script>
-
-<style>
-  body.dark-theme {
-    background-color: #121212;
-    color: white;
-  }
-</style>
+ 
 
