@@ -1,38 +1,136 @@
-
+/* Genel Stiller */
 body {
-    body {
-  transition: background-color 0.4s, color 0.4s;
-}
-
-    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1e1e1e;
-    color: #eee;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s, color 0.5s;
+    background-color: #121212;
+    color: #ffffff;
 }
 
 header {
-    background-color: #333;
-    padding: 2rem;
     text-align: center;
+    padding: 2rem;
 }
 
-.services, .contact {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
 ul {
-    list-style-type: square;
-    padding-left: 1.5rem;
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 0.5rem 0;
+}
+
+section {
+    margin: 2rem auto;
+    width: 80%;
+    max-width: 800px;
 }
 
 footer {
-    background-color: #222;
-    color: #aaa;
     text-align: center;
     padding: 1rem;
-    position: relative;
+    background-color: #1e1e1e;
+    position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Tema Değiştirme */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light-mode footer {
+    background-color: #f0f0f0;
+}
+
+/* Tema Butonu */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: #45a049;
+}
+
+/* Giriş Formu */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 0.5rem;
+    width: 200px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Sayfa Geçiş Animasyonu */
+.fade-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Mobil Görünüm */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        width: 95%;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        width: 90%;
+    }
 }
