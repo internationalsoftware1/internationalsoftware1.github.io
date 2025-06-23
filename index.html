@@ -2,7 +2,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+  <!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERNATIONAL SOFTWARE</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>INTERNATIONAL SOFTWARE</h1>
+        <button id="theme-toggle">Tema Değiştir</button>
+    </header>
+
+    <section class="services">
+        <h2>Hizmetlerimiz</h2>
+        <ul>
+            <li>Web Tasarım</li>
+            <li>Uygulama Geliştirme</li>
+            <li>Mobil Oyun</li>
+            <li>Masaüstü Oyun</li>
+        </ul>
+    </section>
+
+    <section class="auth">
+        <h2>Kullanıcı Girişi</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Şifre">
+        <button onclick="login()">Giriş Yap</button>
+        <button onclick="register()">Kayıt Ol</button>
+        <button onclick="logout()">Çıkış Yap</button>
+    </section>
+
+    <footer>
+        <p>© 2025 INTERNATIONAL SOFTWARE</p>
+    </footer>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDYBSYIZe1f_B4pejMXou6k14RnIB3ZfV0",
+            authDomain: "internationalsoftware-aaad6.firebaseapp.com",
+            projectId: "internationalsoftware-aaad6",
+            storageBucket: "internationalsoftware-aaad6.appspot.com",
+            messagingSenderId: "481532274299",
+            appId: "1:481532274299:web:22bf73fc3c19ccb65164de",
+            measurementId: "G-740109WBFF"
+        };
+
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            auth.signInWithEmailAndPassword(email, password)
+                .then(() => alert('Giriş Başarılı'))
+                .catch(error => alert(error.message));
+        }
+
+        function register() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            auth.createUserWithEmailAndPassword(email, password)
+                .then(() => alert('Kayıt Başarılı'))
+                .catch(error => alert(error.message));
+        }
+
+        function logout() {
+            auth.signOut()
+                .then(() => alert('Çıkış Yapıldı'))
+                .catch(error => alert(error.message));
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+    </script>
+</body>
+
+</html>
+
     <!-- Firebase App (core SDK) -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
